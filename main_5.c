@@ -91,25 +91,25 @@ void updateNode(struct Node **head,char key[],char newname[],int newage){
 
 int main() {
     struct Node *head = NULL;
-    addNode(&head,"vixvify",18);
-    addNode(&head,"view",19);
-    addNode(&head,"kwan",20);
-    addNode(&head,"aon",21);
-    addNode(&head,"phu",22);
+    addNode(&head,"a",18);
+    addNode(&head,"b",19);
+    addNode(&head,"c",20);
+    addNode(&head,"d",21);
+    addNode(&head,"e",22);
     
-    struct Node *result = searchNode(&head,"view");
+    struct Node *result = searchNode(&head,"c");
     printf("name = %s , age = %d \n\n",result -> name,result -> age);
     
     printf("-------current data-------");
     printf("\n");
     printf("\n");
     
-    deleteNode(&head,"vixvify");
+    deleteNode(&head,"a");
     
     printf("-------update data-------");
      printf("\n");
     printf("\n");
     
-    updateNode(&head,"view","wilasinee",30);
+    updateNode(&head,"b","z",30);
     return 0;
 }
