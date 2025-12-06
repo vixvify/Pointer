@@ -45,6 +45,7 @@ void deleteNode(struct Node **head,char key[]){
     struct Node *temp = *head;
     struct Node *prev;
     
+    if(temp == NULL) return;
     if (strcmp(temp->name, key) == 0) {
         *head = temp->next;   
     }
@@ -59,6 +60,25 @@ void deleteNode(struct Node **head,char key[]){
     else{
         prev -> next = temp -> next;
     }
+    
+    // currect data
+    temp = *head;
+    while(temp != NULL){
+        printf("%s\n",temp->name);
+        printf("%d\n\n",temp->age);
+        temp = temp->next;
+    }
+}
+
+void updateNode(struct Node **head,char key[],char newname[],int newage){
+    struct Node *temp = *head;
+    if(temp == NULL) return;
+    
+    while(temp != NULL && strcmp(temp->name,key) != 0){
+        temp = temp -> next;
+    }
+    strcpy(temp->name,newname);
+    temp -> age = newage;
     
     // currect data
     temp = *head;
@@ -85,5 +105,11 @@ int main() {
     printf("\n");
     
     deleteNode(&head,"vixvify");
+    
+    printf("-------update data-------");
+     printf("\n");
+    printf("\n");
+    
+    updateNode(&head,"view","wilasinee",30);
     return 0;
 }
